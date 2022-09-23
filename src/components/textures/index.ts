@@ -5,12 +5,12 @@ import WoodImg from '../../assets/wood.jpeg'
 import LogImg from '../../assets/log.jpeg'
 import GrassImg from '../../assets/grass.jpeg'
 
-const dirtTexture = new TextureLoader(DirtImg)
-const glassTexture = new TextureLoader(GlassImg)
-const groundTexture = new TextureLoader(GlassImg)
-const woodTexture = new TextureLoader(WoodImg)
-const logTexture = new TextureLoader(LogImg)
-const grassTexture = new TextureLoader(GrassImg)
+const dirtTexture = new TextureLoader().load(DirtImg)
+const glassTexture = new TextureLoader().load(GlassImg)
+const groundTexture = new TextureLoader().load(GrassImg)
+const woodTexture = new TextureLoader().load(WoodImg)
+const logTexture = new TextureLoader().load(LogImg)
+const grassTexture = new TextureLoader().load(GrassImg)
 
 export {
   glassTexture,
