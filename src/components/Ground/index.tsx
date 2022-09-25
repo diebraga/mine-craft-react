@@ -1,9 +1,6 @@
 import { usePlane } from '@react-three/cannon';
 import React from 'react';
 import { groundTexture } from '../textures';
-import * as three from "three";
-
-// import { Container } from './styles';
 
 const Ground: React.FC = () => {
   const [ref] = usePlane(() => ({
@@ -11,10 +8,7 @@ const Ground: React.FC = () => {
     position: [0, 0, 0]
   }))
 
-  groundTexture.wrapS = three.RepeatWrapping
-  groundTexture.wrapT = three.RepeatWrapping
   groundTexture.repeat.set(100, 100)
-  groundTexture.magFilter = three.NearestFilter
 
   return (
     <mesh ref={ref}>
