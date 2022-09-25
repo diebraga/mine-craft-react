@@ -7,7 +7,7 @@ import * as three from "three";
 
 const Ground: React.FC = () => {
   const [ref] = usePlane(() => ({
-    rotation: [-Math.PI / 4, 0, 0],
+    rotation: [-Math.PI / 2, 0, 0],
     position: [0, 0, 0]
   }))
 
@@ -18,7 +18,7 @@ const Ground: React.FC = () => {
 
   return (
     <mesh ref={ref}>
-      <planeBufferGeometry attach="geometry" args={[100, 100]} />
+      <planeGeometry attach="geometry" args={[100, 100]} />
       <meshStandardMaterial attach="material" map={groundTexture}/>
     </mesh>
   )
