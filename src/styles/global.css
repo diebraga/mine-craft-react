@@ -14,3 +14,10 @@ canvas {
   height: 100vh;
   display: flex;
 }
+
+.cursor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
