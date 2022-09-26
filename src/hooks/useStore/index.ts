@@ -14,22 +14,12 @@ type Store = {
   setTexture: () => void
   saveWorld: () => void
   resetWorld: () => void
+  addCube: (x: number, y: number, z: number) => void
 }
 
 export const useStore = create<Store>((set) => ({
   texture: "dirt",
-  cubes: [
-    {
-    key: nanoid(),
-    pos: [2, 0.5, 0],
-    texture: "dirt"
-  },
-  {
-    key: nanoid(),
-    pos: [5, 0.5, 0],
-    texture: "wood"
-  }
-],
+  cubes: [],
   removeCube: () => { },
   addCube: (x: number, y: number, z: number) => {
     set((prev) => ({
