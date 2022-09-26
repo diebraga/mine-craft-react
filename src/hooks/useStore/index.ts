@@ -10,7 +10,7 @@ type Cube = {
 type Store = {
   texture: string,
   cubes: Cube[],
-  removeCube: () => void
+  removeCube: (x: number, y: number, z: number) => void
   setTexture: () => void
   saveWorld: () => void
   resetWorld: () => void
@@ -20,7 +20,14 @@ type Store = {
 export const useStore = create<Store>((set) => ({
   texture: "dirt",
   cubes: [],
-  removeCube: () => { },
+  removeCube: (x: number, y: number, z: number) => {
+    set((prev) => ({
+      cubes: prev.cubes.filter(cube => {
+        const [X, Y, Z] = cube.pos
+        return (X !== x || Y !== y || Z !== z)
+      })
+    }))
+  },
   addCube: (x: number, y: number, z: number) => {
     set((prev) => ({
       cubes: [

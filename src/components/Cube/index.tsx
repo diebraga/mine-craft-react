@@ -1,5 +1,7 @@
 import { useBox } from '@react-three/cannon';
 import React from 'react';
+import { useStore } from '../../hooks/useStore';
+import { handleAddCubeToCube } from '../../utils/handleAddCubeToCube';
 import * as textures from '../textures'
 
 type Props = {
@@ -12,12 +14,28 @@ const Cube: React.FC<Props> = ({ position, texture }) => {
     type: "Static",
     position
   }))
+  const [addCube, removeCube] = useStore((state) => [state.addCube, state.removeCube])
+
   // @ts-ignore
   const activeTexture = textures[texture + "Texture"]
-  console.log(activeTexture)
+
   return (
-    <mesh ref={ref}>
-      <boxBufferGeometry attach="geometry" />
+    <mesh
+      ref={ref}
+      onClick={(e) => {
+        e.stopPropagation()
+        // @ts-ignore
+        const clickedFace = Math.floor(e.faceIndex / 2)
+        const { x, y, z } = ref.current.position
+        // @ts-ignore
+        if (e.shiftKey) {
+          removeCube(x, y, z)
+          return
+        }
+        handleAddCubeToCube(clickedFace, addCube, x, y, z)
+      }}
+    >
+      <boxGeometry attach="geometry" />
       <meshStandardMaterial map={activeTexture} attach="material" />
     </mesh>
   );
