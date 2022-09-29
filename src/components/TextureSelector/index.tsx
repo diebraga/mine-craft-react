@@ -8,16 +8,16 @@ const TextureSelector: React.FC = () => {
     state.texture,
     state.setTexture,
   ]);
+  console.log(activeTexture)
   const { glass, dirt, grass, log, wood } = useKeyboard();
 
   const textures = { glass, dirt, grass, log, wood };
   useEffect(() => {
     const pressedTexture = Object.entries(textures).find(([k, v]) => v);
     if (pressedTexture) {
-      console.log(pressedTexture[0]);
       setTexture(pressedTexture[0]);
     }
-  }, [glass, dirt, grass, log, wood, setTexture, textures]);
+  }, [glass, dirt, grass, log, wood, setTexture]);
 
   useEffect(() => {
     const visibilityTimeout = setTimeout(() => {
