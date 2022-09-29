@@ -1,5 +1,5 @@
 import { useBox } from "@react-three/cannon";
-import React, { useState } from "react";
+import React from "react";
 import { useStore } from "../../hooks/useStore";
 import { handleAddCubeToCube } from "../../utils/handleAddCubeToCube";
 import * as textures from "../textures";

@@ -6,6 +6,8 @@ import { Player } from "./components/Player";
 import { FirstPersonView } from "./components/FirstPersonView";
 import { Cubes } from "./components/Cubes";
 import { TextureSelector } from "./components/TextureSelector";
+import { Menu } from "./components/Menu";
+import { Box } from "@chakra-ui/react";
 
 function App() {
   return (
@@ -20,7 +22,15 @@ function App() {
           <Ground />
         </Physics>
       </Canvas>
-      <div className="cursor">+</div>
+      <Box
+        transform="translate(-50%,-50%)"
+        top="50%"
+        left="50%"
+        position="absolute"
+      >
+        +
+      </Box>
+      <Menu />
       <TextureSelector />
     </>
   );

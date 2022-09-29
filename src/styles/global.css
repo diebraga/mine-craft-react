@@ -1,23 +1,9 @@
 html, body {
   height: 100%;
-  font-family: sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 canvas {
   width: 100vw;
   height: 100vh;
-  display: flex;
 }
 
-.cursor {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
