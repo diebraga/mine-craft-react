@@ -11,7 +11,7 @@ type Store = {
   texture: string,
   cubes: Cube[],
   removeCube: (x: number, y: number, z: number) => void
-  setTexture: () => void
+  setTexture: (texture: string) => void
   saveWorld: () => void
   resetWorld: () => void
   addCube: (x: number, y: number, z: number) => void
@@ -40,7 +40,11 @@ export const useStore = create<Store>((set) => ({
       ]
     }))
   },
-  setTexture: () => { },
+  setTexture: (texture: string) => { 
+    set(() => ({
+      texture
+    }))
+  },
   saveWorld: () => { },
   resetWorld: () => { }
 }))

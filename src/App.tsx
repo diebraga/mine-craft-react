@@ -5,6 +5,7 @@ import { Ground } from "./components/Ground";
 import { Player } from "./components/Player";
 import { FirstPersonView } from "./components/FirstPersonView";
 import { Cubes } from "./components/Cubes";
+import { TextureSelector } from "./components/TextureSelector";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </Physics>
       </Canvas>
       <div className="cursor">+</div>
+      <TextureSelector />
     </>
   );
 }
