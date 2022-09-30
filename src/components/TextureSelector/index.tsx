@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useKeyboard } from "../../hooks/useKeybord";
+import { useKeyboard } from "../../hooks/useKeyBoard";
 import { useStore } from "../../hooks/useStore";
 
 const TextureSelector: React.FC = () => {
@@ -8,7 +8,7 @@ const TextureSelector: React.FC = () => {
     state.texture,
     state.setTexture,
   ]);
-  console.log(activeTexture)
+  // console.log(activeTexture);
   const { glass, dirt, grass, log, wood } = useKeyboard();
 
   const textures = { glass, dirt, grass, log, wood };

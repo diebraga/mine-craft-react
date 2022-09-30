@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { actionByKey } from "../utils/actionByKey";
+import { actionByKey } from "../../utils/actionByKey";
 
 export const useKeyboard = () => {
   const [actions, setActions] = useState({
-    moveFoward: false,
+    moveForward: false,
     moveBack: false,
     moveLeft: false,
     moveRight: false,
@@ -13,6 +13,7 @@ export const useKeyboard = () => {
     glass: false,
     wood: false,
     log: false,
+    arrowForward: false
   });
 
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
