@@ -8,6 +8,7 @@ import { Cubes } from "./components/Cubes";
 import { TextureSelector } from "./components/TextureSelector";
 import { Menu } from "./components/Menu";
 import { Box } from "@chakra-ui/react";
+import { Controller } from "./components/Controller";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       </Box>
       <Menu />
       <TextureSelector />
+      <Controller />
     </>
   );
 }
