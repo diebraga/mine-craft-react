@@ -33,7 +33,6 @@ function App() {
       </Box>
       <Menu />
       <TextureSelector />
-      <Controller />
     </>
   );
 }
